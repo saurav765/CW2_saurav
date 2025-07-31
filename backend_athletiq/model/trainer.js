@@ -1,4 +1,3 @@
-// models/trainer.js
 const { DataTypes } = require('sequelize');
 const { sequelize } = require('../db/database');
 
@@ -27,6 +26,7 @@ const Trainer = sequelize.define('Trainer', {
   },
 }, {
   timestamps: true,
+  tableName: 'trainers', // ✅ Explicit table name for consistency with foreign keys
 });
 
 module.exports = Trainer;

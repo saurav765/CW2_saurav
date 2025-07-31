@@ -1,6 +1,6 @@
 const express = require("express");
 const { sequelize, connectDB } = require('./db/database');
-const { User, Trainer } = require('./db/models');
+
 const dotenv = require("dotenv");
 const cors = require("cors");
 
@@ -21,6 +21,8 @@ app.use('/api/user', require('./route/userroute'));
 app.use('/api/memberships', require('./route/membershiproute'));
 app.use("/api/attendance", require("./route/attendanceroute"));
 app.use('/api/trainers', require('./route/trainerroute'));
+app.use('/api/dietplans', require('./route/dietplanroute'));
+app.use("/api/workouts", require("./route/workoutscheduleroute"));
 app.use('/api/admin', require('./route/adminroute'));
 
 app.get('/', (req, res) => {
@@ -31,7 +33,7 @@ app.get('/', (req, res) => {
 const startServer = async () => {
     try {
         await connectDB();
-        await sequelize.sync(); // Sync models with DB
+        await sequelize.sync({ alter: true }); // Sync models with DB
         app.listen(PORT, () => {
             console.log(`✅ Server is running on http://localhost:${PORT}`);
         });

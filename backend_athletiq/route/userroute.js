@@ -1,5 +1,5 @@
 const route = require("express").Router();
-const {createUsers,loginUsers, findUserById, updateUsersBySelf, deleteUsers,assignTrainerToMember} = require("../controller/usercontroller");
+const {createUsers,loginUsers, updateUsersBySelf, deleteUsers,assignTrainerToMember} = require("../controller/usercontroller");
 const isAdmin = require("../middleware/isAdmin");
 const authGuard = require("../middleware/authguard")
 const fileUpload = require('../middleware/multer')

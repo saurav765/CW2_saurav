@@ -40,11 +40,21 @@ const User = sequelize.define(
       type: DataTypes.STRING,
       allowNull: false,
     },
-    trainerId: {   // <-- Add this field
+    trainerId: {
       type: DataTypes.INTEGER,
       allowNull: true,
       references: {
-        model: 'Trainers',  // Table name in DB for trainers
+        model: 'trainers',
+        key: 'id',
+      },
+    },
+
+    // ✅ New Field for Diet Plan
+    dietPlanId: {
+      type: DataTypes.INTEGER,
+      allowNull: true,
+      references: {
+        model: 'dietplans', // Use table name as string
         key: 'id',
       },
     },

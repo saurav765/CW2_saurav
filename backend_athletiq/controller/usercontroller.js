@@ -121,20 +121,20 @@ const updateUsersBySelf = async (req, res) => {
     return res.status(500).json({ success: false, message: "Error updating user", error: error.message || error });
   }
 };
-const findUserById=async(req,res) => {
-    const userId=req.params.id;
-    try{
-        const userExist=await User.findOne({where : {id:userId}})
-        if (userExist) {
-            console.log("User")
-            return res.json({message:"userExist"})
-        } else {
-            return res.json({message: "User not found"})
-        }
-    } catch(error) {
-        return res.status(400).json({error: error});
-    }
-}
+// const findUserById=async(req,res) => {
+//     const userId=req.params.id;
+//     try{
+//         const userExist=await User.findOne({where : {id:userId}})
+//         if (userExist) {
+//             console.log("User")
+//             return res.json({message:"userExist"})
+//         } else {
+//             return res.json({message: "User not found"})
+//         }
+//     } catch(error) {
+//         return res.status(400).json({error: error});
+//     }
+// }
 
 const assignTrainerToMember = async (req, res) => {
   try {
@@ -163,5 +163,5 @@ const assignTrainerToMember = async (req, res) => {
 };
 
 module.exports ={
-    loginUsers,createUsers,updateUsersBySelf,findUserById,deleteUsers,assignTrainerToMember
+    loginUsers,createUsers,updateUsersBySelf,deleteUsers,assignTrainerToMember
 }
