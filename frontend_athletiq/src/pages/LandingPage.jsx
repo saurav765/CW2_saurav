@@ -39,7 +39,7 @@ const LandingPage = () => {
             </div>
             
             {/* Desktop Menu */}
-            <div className="hidden md:block">
+            <div className=" md:block">
               <div className="ml-10 flex items-baseline space-x-4">
                 <button onClick={() => scrollToSection('home')} className="text-white hover:text-blue-400 px-3 py-2 rounded-md text-sm font-medium transition-colors">Home</button>
                 <button onClick={() => scrollToSection('about')} className="text-gray-300 hover:text-blue-400 px-3 py-2 rounded-md text-sm font-medium transition-colors">About</button>

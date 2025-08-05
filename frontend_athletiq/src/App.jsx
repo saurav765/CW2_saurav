@@ -24,6 +24,8 @@ const App = () => {
     console.log('Logged in user:', userData);
     setToken(authToken);
     setUser(userData);
+    console.log("userData",userData);
+    
     localStorage.setItem('token', authToken);
     localStorage.setItem('user', JSON.stringify(userData));
   };
@@ -68,7 +70,7 @@ const App = () => {
           path="/dashboard"
           element={
             user ? (
-              // Use .toLowerCase() in case backend sends "Admin" or "admin"
+              
               (user.role && user.role.toLowerCase() === 'admin') ? (
                 <AdminDashboard user={user} token={token} onLogout={handleLogout} />
               ) : (

@@ -109,26 +109,6 @@ const api = {
       return response.json();
     },
 
-    // Trainer Management
-    createTrainer: async (trainerData, token) => {
-      const response = await fetch(`${API_BASE}/trainers/create`, {
-        method: 'POST',
-        headers: { 
-          'Content-Type': 'application/json',
-          'Authorization': `Bearer ${token}` 
-        },
-        body: JSON.stringify(trainerData)
-      });
-      return response.json();
-    },
-
-    getAllTrainers: async (token) => {
-      const response = await fetch(`${API_BASE}/trainers/get`, {
-        headers: { 'Authorization': `Bearer ${token}` }
-      });
-      return response.json();
-    },
-
     assignTrainerToMember: async (memberId, trainerId, token) => {
       const response = await fetch(`${API_BASE}/user/assign-trainer`, {
         method: 'POST',
@@ -249,6 +229,48 @@ const api = {
       });
       return response.json();
     }
+  },
+
+  // Trainer APIs
+  trainer: {
+    createTrainer: async (trainerData, token) => {
+      const response = await fetch(`${API_BASE}/trainers/create`, {
+        method: 'POST',
+        headers: { 
+          'Content-Type': 'application/json',
+          'Authorization': `Bearer ${token}` 
+        },
+        body: JSON.stringify(trainerData)
+      });
+      return response.json();
+    },
+
+    getAllTrainers: async (token) => {
+      const response = await fetch(`${API_BASE}/trainers/get`, {
+        headers: { 'Authorization': `Bearer ${token}` }
+      });
+      return response.json();
+    },
+
+    updateTrainerById: async (id, trainerData, token) => {
+      const response = await fetch(`${API_BASE}/trainers/update/${id}`, {
+        method: 'PUT',
+        headers: { 
+          'Content-Type': 'application/json',
+          'Authorization': `Bearer ${token}` 
+        },
+        body: JSON.stringify(trainerData)
+      });
+      return response.json();
+    },
+
+    deleteTrainerById: async (id, token) => {
+      const response = await fetch(`${API_BASE}/trainers/delete/${id}`, {
+        method: 'DELETE',
+        headers: { 'Authorization': `Bearer ${token}` }
+      });
+      return response.json();
+    },
   },
 
   // User APIs

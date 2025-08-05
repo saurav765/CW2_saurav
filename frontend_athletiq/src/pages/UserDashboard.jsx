@@ -16,6 +16,9 @@ const UserDashboard = ({ user, token, onLogout }) => {
     }
   }, [activeTab]);
 
+  console.log("user---->>>>",user.username);
+  
+
   const fetchDietPlan = async () => {
     setLoading(true);
     try {
@@ -49,13 +52,13 @@ const UserDashboard = ({ user, token, onLogout }) => {
       {/* User Header */}
       <div className="bg-white shadow-sm border-b">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="flex justify-between items-center h-16">
+          <div className="flex  justify-between items-center h-16">
             <div className="flex items-center">
               <Dumbbell className="h-8 w-8 text-blue-600" />
               <span className="ml-2 text-xl font-bold text-gray-900">AthletiQ Dashboard</span>
             </div>
             <div className="flex items-center space-x-4">
-              <span className="text-gray-700">Welcome, {user.userName}</span>
+              <span className="text-gray-700">Welcome, {user.username}</span>
               <button
                 onClick={onLogout}
                 className="bg-red-600 hover:bg-red-700 text-white px-4 py-2 rounded-md text-sm font-medium"
@@ -119,7 +122,7 @@ const UserDashboard = ({ user, token, onLogout }) => {
                         <Calendar className="h-8 w-8 text-green-600" />
                         <div className="ml-3">
                           <p className="text-sm font-medium text-green-600">This Month</p>
-                          <p className="text-lg font-bold text-green-900">12 Workouts</p>
+                          <p className="text-lg font-bold text-green-900">0 Workout</p>
                         </div>
                       </div>
                     </div>
@@ -129,7 +132,7 @@ const UserDashboard = ({ user, token, onLogout }) => {
                         <Activity className="h-8 w-8 text-purple-600" />
                         <div className="ml-3">
                           <p className="text-sm font-medium text-purple-600">Streak</p>
-                          <p className="text-lg font-bold text-purple-900">5 Days</p>
+                          <p className="text-lg font-bold text-purple-900">0 Day</p>
                         </div>
                       </div>
                     </div>
@@ -237,7 +240,7 @@ const UserDashboard = ({ user, token, onLogout }) => {
                     <div className="space-y-4">
                       <div>
                         <label className="block text-sm font-medium text-gray-700">Username</label>
-                        <p className="mt-1 text-sm text-gray-900">{user.userName}</p>
+                        <p className="mt-1 text-sm text-gray-900">{user.username}</p>
                       </div>
                       
                       <div>

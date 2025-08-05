@@ -12,9 +12,9 @@ export default function Navbar() {
         <Link to="/add-member" className="hover:underline">
           Add Member
         </Link>
-        <Link to="/" className="hover:underline">
+        {/* <Link to="/" className="hover:underline">
           Logout
-        </Link>
+        </Link> */}
       </div>
     </nav>
   );

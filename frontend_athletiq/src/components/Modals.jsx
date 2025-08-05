@@ -62,7 +62,7 @@ const UserModal = ({ isOpen, onClose, user, onSave, trainers }) => {
             <X className="h-6 w-6" />
           </button>
         </div>
-        
+
         <form onSubmit={handleSubmit}>
           <div className="mb-4">
             <label className="block text-gray-700 text-sm font-bold mb-2">Username</label>
@@ -75,7 +75,7 @@ const UserModal = ({ isOpen, onClose, user, onSave, trainers }) => {
               required
             />
           </div>
-          
+
           <div className="mb-4">
             <label className="block text-gray-700 text-sm font-bold mb-2">Email</label>
             <input
@@ -87,7 +87,7 @@ const UserModal = ({ isOpen, onClose, user, onSave, trainers }) => {
               required
             />
           </div>
-          
+
           {!user && (
             <div className="mb-4">
               <label className="block text-gray-700 text-sm font-bold mb-2">Password</label>
@@ -101,7 +101,7 @@ const UserModal = ({ isOpen, onClose, user, onSave, trainers }) => {
               />
             </div>
           )}
-          
+
           <div className="mb-4">
             <label className="block text-gray-700 text-sm font-bold mb-2">Membership Plan</label>
             <select
@@ -115,7 +115,7 @@ const UserModal = ({ isOpen, onClose, user, onSave, trainers }) => {
               <option value="VIP">VIP</option>
             </select>
           </div>
-          
+
           <div className="mb-4">
             <label className="block text-gray-700 text-sm font-bold mb-2">Role</label>
             <select
@@ -128,7 +128,7 @@ const UserModal = ({ isOpen, onClose, user, onSave, trainers }) => {
               <option value="admin">Admin</option>
             </select>
           </div>
-          
+
           <div className="mb-4">
             <label className="block text-gray-700 text-sm font-bold mb-2">Trainer (Optional)</label>
             <select
@@ -143,7 +143,7 @@ const UserModal = ({ isOpen, onClose, user, onSave, trainers }) => {
               ))}
             </select>
           </div>
-          
+
           <div className="mb-6">
             <label className="block text-gray-700 text-sm font-bold mb-2">Profile Image</label>
             <input
@@ -154,13 +154,13 @@ const UserModal = ({ isOpen, onClose, user, onSave, trainers }) => {
               accept="image/*"
             />
           </div>
-          
+
           <div className="flex space-x-4">
             <button
               type="submit"
               className="flex-1 bg-blue-600 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded-md transition-colors"
             >
-              {user ? 'Update User' : 'Create User'}
+              {user ? 'Update User' : 'asfdsdf'}
             </button>
             <button
               type="button"
